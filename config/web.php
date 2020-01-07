@@ -80,7 +80,9 @@ $config = [
                         'POST login' => 'login',
                         'OPTIONS login' => 'options',
                         'POST registration' => 'registration',
-                        'OPTIONS registration' => 'options'
+                        'OPTIONS registration' => 'options',
+                        'POST access' => 'access',
+                        'OPTIONS access' => 'options'
                     ],
                 ],
             ],

@@ -14,6 +14,7 @@ use yii\rest\ActiveController;
 
 use app\modules\v1\models\UserAttributes;
 use yii\web\ForbiddenHttpException;
+use yii\web\NotFoundHttpException;
 
 class UserController extends ActiveController {
 
@@ -27,8 +28,7 @@ class UserController extends ActiveController {
             ],
         ]);
         $behaviors['authenticator']['class'] = HttpBearerAuth::className();
-        $behaviors['authenticator']['only'] = ['create', 'update', 'delete', 'view', 'index'];
-
+        $behaviors['authenticator']['only'] = ['create', 'update', 'delete', 'view', 'index', 'access'];
 
         return $behaviors;
     }
@@ -47,6 +47,35 @@ class UserController extends ActiveController {
         return $activeData;
     }
 
+    /**
+     * @return array
+     * @throws ForbiddenHttpException
+     * @throws NotFoundHttpException
+     */
+    public function actionAccess(){
+        $response = array();
+        if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['root']))
+            if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['administrator']))
+                 throw new ForbiddenHttpException(sprintf('You can only access articles that you\'ve created.'));
+        try {
+            $request['query'] = Yii::$app->getRequest()->getBodyParams();
+            $phone = User::trimPhone($request['query']['phone']);
+            $organization = $request['query']['organization'];
+            $identity = User::findByUsername($phone);
+            if($identity){
+
+            }else{
+                throw new NotFoundHttpException(sprintf('User number '.$request['query']['phone'].' not found'));
+            }
+        } catch (InvalidConfigException $e) {
+        }
+
+        return $response;
+    }
+
+    /**
+     * @return array
+     */
     public function actionLogin(){
         $response = array();
         try {
@@ -90,6 +119,9 @@ class UserController extends ActiveController {
         return $response;
     }
 
+    /**
+     * @return array
+     */
     public function actionRegistration(){
         $response = array();
         try {
@@ -186,6 +218,8 @@ class UserController extends ActiveController {
         } elseif ($action === 'delete') {
             throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
         } elseif ($action === 'create') {
+            throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
+        } elseif ($action === 'access') {
             throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
         }
     }
