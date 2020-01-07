@@ -2,6 +2,7 @@
 
 namespace app\modules\v1\controllers;
 
+use app\modules\v1\models\Organization;
 use app\modules\v1\models\User;
 use Yii;
 use yii\base\Exception;
@@ -51,6 +52,7 @@ class UserController extends ActiveController {
      * @return array
      * @throws ForbiddenHttpException
      * @throws NotFoundHttpException
+     * @throws \Exception
      */
     public function actionAccess(){
         $response = array();
@@ -61,9 +63,34 @@ class UserController extends ActiveController {
             $request['query'] = Yii::$app->getRequest()->getBodyParams();
             $phone = User::trimPhone($request['query']['phone']);
             $organization = $request['query']['organization'];
+            $organizations = Organization::getOrganizationIds(Yii::$app->user->identity['id']);
             $identity = User::findByUsername($phone);
             if($identity){
+                if(in_array($organization, $organizations)){
+                    if($identity->access != NULL){
+                        $access = (array)json_decode($identity->access);
+                    } else {
+                        $access = array();
+                    }
+                    if(!in_array($organization, $access)){
+                        $access[] = $organization;
+                    }
+                    $identity->access = json_encode($access);
+                    $identity->save();
 
+                    if(isset(Yii::$app->authManager->getRolesByUser($identity->id)['user'])){
+                        $auth = Yii::$app->authManager;
+                        $authorRole = $auth->getRole('manager');
+                        $auth->assign($authorRole, $identity->id);
+                    }
+
+                    $response = [
+                        'result' => 'success',
+                        'message' => 'Пользователю '.$request['query']['phone'].' успешно выдан доступ',
+                    ];
+                }else{
+                    throw new NotFoundHttpException(sprintf('Organization for ID '.$organization.' not found'));
+                }
             }else{
                 throw new NotFoundHttpException(sprintf('User number '.$request['query']['phone'].' not found'));
             }

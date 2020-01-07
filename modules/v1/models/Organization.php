@@ -142,4 +142,14 @@ class Organization extends ActiveRecord
         $s = str_replace(" ", "-", $s);
         return $s;
     }
+
+    public static function getOrganizationIds($user_id)
+    {
+        $ids = array();
+        $organizations =  Organization::find()->select(['id'])->where(array('user_id' => $user_id))->orderBy(['id' => SORT_DESC])->asArray()->all();
+        foreach ($organizations as $organization) {
+            $ids[] = $organization['id'];
+        }
+        return $ids;
+    }
 }

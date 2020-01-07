@@ -13,6 +13,7 @@ use yii\web\IdentityInterface;
  * @property string $password
  * @property string $token
  * @property string|null $session
+ * @property string|null $access
  *
  * @property Event[] $events
  * @property Organization[] $organizations
@@ -38,6 +39,7 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return [
             [['username', 'password', 'token'], 'required'],
+            [['access'], 'string'],
             [['username', 'password', 'token', 'session'], 'string', 'max' => 255],
         ];
     }
@@ -53,6 +55,7 @@ class User extends ActiveRecord implements IdentityInterface
             'password' => 'Password',
             'token' => 'Token',
             'session' => 'Session',
+            'access' => 'Access',
         ];
     }
 
