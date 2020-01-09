@@ -210,4 +210,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         return preg_replace('~[^0-9]+~','', $phone);
     }
+
+    public static function getRole($roles)
+    {
+        $userRole = '';
+        foreach ($roles as $role => $val){
+            $userRole = $role;
+        }
+        return $userRole;
+    }
 }

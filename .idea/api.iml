@@ -19,6 +19,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/workerman/workerman" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
@@ -48,6 +49,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
+          <root url="file://$MODULE_DIR$/vendor/workerman/workerman" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />
@@ -73,6 +75,7 @@
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-intl-idn" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-mbstring" />
           <root url="file://$MODULE_DIR$/vendor/symfony/polyfill-php72" />
+          <root url="file://$MODULE_DIR$/vendor/workerman/workerman" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-composer" />
           <root url="file://$MODULE_DIR$/vendor/yiisoft/yii2-debug" />

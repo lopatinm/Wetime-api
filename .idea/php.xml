@@ -25,6 +25,7 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-faker" />
       <path value="$PROJECT_DIR$/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/workerman/workerman" />
     </include_path>
   </component>
 </project>

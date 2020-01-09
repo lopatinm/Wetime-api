@@ -3,6 +3,8 @@
 namespace app\modules\v1\controllers;
 
 use app\modules\v1\models\Organization;
+use app\modules\v1\models\Request;
+use app\modules\v1\models\Subscription;
 use app\modules\v1\models\User;
 use Yii;
 use yii\base\Exception;
@@ -129,7 +131,11 @@ class UserController extends ActiveController {
                         'email' => $profile->email,
                         'photo' => $profile->photo,
                         'locality' => $profile->locality,
-                        'role' => Yii::$app->authManager->getRolesByUser($identity->id),
+                        'subscriptions' => Subscription::getSubscriptionsByUserId($identity->id),
+                        'requests' => Request::getRequestsByUserId($identity->id),
+                        'events' => $identity->events,
+                        'organizations' => $identity->organizations,
+                        'role' => User::getRole(Yii::$app->authManager->getRolesByUser($identity->id)),
                         'token' => $identity->token,
                     ],
                 ];
@@ -189,7 +195,11 @@ class UserController extends ActiveController {
                                 'email' => $profile->email,
                                 'photo' => $profile->photo,
                                 'locality' => $profile->locality,
-                                'role' => Yii::$app->authManager->getRolesByUser($identity->id),
+                                'subscriptions' => Subscription::getSubscriptionsByUserId($identity->id),
+                                'requests' => Request::getRequestsByUserId($identity->id),
+                                'events' => $identity->events,
+                                'organizations' => $identity->organizations,
+                                'role' => User::getRole(Yii::$app->authManager->getRolesByUser($identity->id)),
                                 'token' => $identity->token,
                             ],
                         ];
@@ -245,8 +255,6 @@ class UserController extends ActiveController {
         } elseif ($action === 'delete') {
             throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
         } elseif ($action === 'create') {
-            throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
-        } elseif ($action === 'access') {
             throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
         }
     }

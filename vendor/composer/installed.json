@@ -860,6 +860,54 @@
         ]
     },
     {
+        "name": "workerman/workerman",
+        "version": "v3.5.23",
+        "version_normalized": "3.5.23.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/walkor/Workerman.git",
+            "reference": "416f864e4815bc8b1475793056520db4543e4455"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/walkor/Workerman/zipball/416f864e4815bc8b1475793056520db4543e4455",
+            "reference": "416f864e4815bc8b1475793056520db4543e4455",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "suggest": {
+            "ext-event": "For better performance. "
+        },
+        "time": "2019-12-23T05:06:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Workerman\\": "./"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "walkor",
+                "email": "walkor@workerman.net",
+                "homepage": "http://www.workerman.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "An asynchronous event driven PHP framework for easily building fast, scalable network applications.",
+        "homepage": "http://www.workerman.net",
+        "keywords": [
+            "asynchronous",
+            "event-loop"
+        ]
+    },
+    {
         "name": "yiisoft/yii2",
         "version": "2.0.31",
         "version_normalized": "2.0.31.0",

@@ -3,6 +3,7 @@
 namespace app\modules\v1\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "subscription".
@@ -15,7 +16,7 @@ use Yii;
  * @property Event $event
  * @property User $user
  */
-class Subscription extends \yii\db\ActiveRecord
+class Subscription extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -52,6 +53,18 @@ class Subscription extends \yii\db\ActiveRecord
     }
 
     /**
+     * @return array
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'event_id',
+            'createdon'
+        ];
+    }
+
+    /**
      * @return \yii\db\ActiveQuery
      */
     public function getEvent()
@@ -65,5 +78,23 @@ class Subscription extends \yii\db\ActiveRecord
     public function getUser()
     {
         return $this->hasOne(User::className(), ['id' => 'user_id']);
+    }
+
+    public static function getSubscriptionsByUserId($user_id){
+        $events = array();
+        $subscriptions = Subscription::find()->where(array('user_id' => $user_id))->with(['event'])->asArray()->all();
+        foreach ($subscriptions as $subscription) {
+            unset($subscription['event']['user_id']);
+            $events[] = $subscription['event'];
+        }
+        return $events;
+    }
+
+    public static function isSubscription($user_id, $event_id){
+        if(Subscription::find()->where(array('user_id' => $user_id, 'event_id' => $event_id))->count() > 0){
+            return false;
+        }else{
+            return true;
+        }
     }
 }

@@ -30,6 +30,10 @@ class ComposerStaticInitf8a7fda7a6a73752f722c73bf6aae6aa
         array (
             'cebe\\markdown\\' => 14,
         ),
+        'W' => 
+        array (
+            'Workerman\\' => 10,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php72\\' => 23,
@@ -83,6 +87,10 @@ class ComposerStaticInitf8a7fda7a6a73752f722c73bf6aae6aa
         'cebe\\markdown\\' => 
         array (
             0 => __DIR__ . '/..' . '/cebe/markdown',
+        ),
+        'Workerman\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/workerman/workerman',
         ),
         'Symfony\\Polyfill\\Php72\\' => 
         array (

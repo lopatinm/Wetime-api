@@ -28,7 +28,10 @@ $config = [
         'response' => [
             'on beforeSend' => function (yii\base\Event $event) {
                 $response = $event->sender;
-                if ((404 === $response->statusCode || 401 === $response->statusCode || 403 === $response->statusCode) && is_array($response->data)) {
+                if ((500 === $response->statusCode || 404 === $response->statusCode || 401 === $response->statusCode || 403 === $response->statusCode) && is_array($response->data)) {
+                    if($response->data['code'] == 485){
+                        $response->data['name'] = "Already exist";
+                    }
                     $response->data['code'] = $response->data['status'];
                     $response->data['status'] = 'Error';
                     unset($response->data['type']);
@@ -74,7 +77,9 @@ $config = [
                         'v1/region',
                         'v1/district',
                         'v1/locality',
-                        'v1/post'
+                        'v1/post',
+                        'v1/subscription',
+                        'v1/request'
                     ],
                     'extraPatterns' => [
                         'POST login' => 'login',

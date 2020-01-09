@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\v1\controllers;
 
+use app\modules\v1\models\Calendar;
 use app\modules\v1\models\Event;
 use app\modules\v1\models\Organization;
 use Yii;
@@ -122,6 +123,12 @@ class EventController extends ActiveController {
             $event->form = $params['form'];
         }
         $event->save();
+
+        $calendar = new Calendar;
+        $calendar->event_id = $event->id;
+        $calendar->date = $event->date;
+        $calendar->save();
+
         return $event;
     }
 

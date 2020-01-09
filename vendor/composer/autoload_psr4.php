@@ -13,6 +13,7 @@ return array(
     'yii\\composer\\' => array($vendorDir . '/yiisoft/yii2-composer'),
     'yii\\' => array($vendorDir . '/yiisoft/yii2'),
     'cebe\\markdown\\' => array($vendorDir . '/cebe/markdown'),
+    'Workerman\\' => array($vendorDir . '/workerman/workerman'),
     'Symfony\\Polyfill\\Php72\\' => array($vendorDir . '/symfony/polyfill-php72'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Intl\\Idn\\' => array($vendorDir . '/symfony/polyfill-intl-idn'),

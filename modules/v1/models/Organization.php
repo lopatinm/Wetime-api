@@ -38,10 +38,6 @@ class Organization extends ActiveRecord
         return 'organization';
     }
 
-    public static function traslit($alias)
-    {
-    }
-
     /**
      * {@inheritdoc}
      */

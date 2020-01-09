@@ -3,6 +3,8 @@
 namespace app\modules\v1\models;
 
 use Yii;
+use yii\db\ActiveRecord;
+use yii\helpers\Json;
 
 /**
  * This is the model class for table "event".
@@ -32,7 +34,7 @@ use Yii;
  * @property int $views
  * @property string|null $latitude
  * @property string|null $longitude
- * @property string|null $form
+ * @property json|null $form
  *
  * @property Calendar[] $calendars
  * @property User $user
@@ -43,7 +45,7 @@ use Yii;
  * @property Request[] $requests
  * @property Subscription[] $subscriptions
  */
-class Event extends \yii\db\ActiveRecord
+class Event extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -61,7 +63,8 @@ class Event extends \yii\db\ActiveRecord
         return [
             [['user_id', 'organization_id', 'locality_id', 'category_id', 'title'], 'required'],
             [['user_id', 'organization_id', 'locality_id', 'category_id', 'createdon', 'published', 'date', 'rating', 'views'], 'integer'],
-            [['introtext', 'description', 'gallery', 'tags', 'form'], 'string'],
+            [['introtext', 'description', 'gallery', 'tags'], 'string'],
+            [['form'], 'json'],
             [['title', 'alias', 'image', 'video', 'address', 'phone', 'email', 'contact', 'time'], 'string', 'max' => 255],
             [['latitude', 'longitude'], 'string', 'max' => 20],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
@@ -103,6 +106,40 @@ class Event extends \yii\db\ActiveRecord
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
             'form' => 'Form',
+        ];
+    }
+
+    /**
+     * @return array
+     */
+    public function fields()
+    {
+        return [
+            'id',
+            'organization_id',
+            'locality_id',
+            'category_id',
+            'title',
+            'alias',
+            'introtext',
+            'description',
+            'image',
+            'gallery',
+            'video',
+            'address',
+            'phone',
+            'email',
+            'contact',
+            'createdon',
+            'published',
+            'date',
+            'time',
+            'tags',
+            'rating',
+            'views',
+            'latitude',
+            'longitude',
+            'form'
         ];
     }
 
