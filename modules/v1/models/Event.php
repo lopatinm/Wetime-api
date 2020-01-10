@@ -64,7 +64,6 @@ class Event extends ActiveRecord
             [['user_id', 'organization_id', 'locality_id', 'category_id', 'title'], 'required'],
             [['user_id', 'organization_id', 'locality_id', 'category_id', 'createdon', 'published', 'date', 'rating', 'views'], 'integer'],
             [['introtext', 'description', 'gallery', 'tags'], 'string'],
-            [['form'], 'json'],
             [['title', 'alias', 'image', 'video', 'address', 'phone', 'email', 'contact', 'time'], 'string', 'max' => 255],
             [['latitude', 'longitude'], 'string', 'max' => 20],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],

@@ -26,7 +26,6 @@ class SubscriptionController extends ActiveController {
         $behaviors['authenticator']['class'] = HttpBearerAuth::className();
         $behaviors['authenticator']['only'] = ['create', 'delete', 'index', 'view'];
 
-
         return $behaviors;
     }
 

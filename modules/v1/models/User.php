@@ -21,6 +21,7 @@ use yii\web\IdentityInterface;
  * @property Request[] $requests
  * @property Subscription[] $subscriptions
  * @property UserAttributes[] $userAttributes
+ * @property Status[] $statuses
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -107,6 +108,13 @@ class User extends ActiveRecord implements IdentityInterface
         return $this->hasMany(UserAttributes::className(), ['internalKey' => 'id']);
     }
 
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStatuses()
+    {
+        return $this->hasMany(Status::className(), ['user_id' => 'id']);
+    }
 
     /**
      * Finds an identity by the given ID.

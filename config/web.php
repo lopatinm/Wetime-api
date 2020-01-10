@@ -71,7 +71,6 @@ $config = [
                     'controller' => [
                         'v1/user',
                         'v1/organization',
-                        'v1/event',
                         'v1/category',
                         'v1/country',
                         'v1/region',
@@ -79,7 +78,9 @@ $config = [
                         'v1/locality',
                         'v1/post',
                         'v1/subscription',
-                        'v1/request'
+                        'v1/request',
+                        'v1/status',
+                        'v1/event'
                     ],
                     'extraPatterns' => [
                         'POST login' => 'login',
@@ -87,7 +88,9 @@ $config = [
                         'POST registration' => 'registration',
                         'OPTIONS registration' => 'options',
                         'POST access' => 'access',
-                        'OPTIONS access' => 'options'
+                        'OPTIONS access' => 'options',
+                        'GET {id}/request' => 'request',
+                        'GET {id}/subscription' => 'subscription'
                     ],
                 ],
             ],

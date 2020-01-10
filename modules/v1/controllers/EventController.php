@@ -4,6 +4,9 @@ namespace app\modules\v1\controllers;
 use app\modules\v1\models\Calendar;
 use app\modules\v1\models\Event;
 use app\modules\v1\models\Organization;
+use app\modules\v1\models\Request;
+use app\modules\v1\models\Subscription;
+use app\modules\v1\models\UserAttributes;
 use Yii;
 use yii\data\ActiveDataProvider;
 use yii\filters\auth\HttpBearerAuth;
@@ -24,8 +27,7 @@ class EventController extends ActiveController {
             ],
         ]);
         $behaviors['authenticator']['class'] = HttpBearerAuth::className();
-        $behaviors['authenticator']['only'] = ['create', 'update', 'delete'];
-
+        $behaviors['authenticator']['only'] = ['create', 'update', 'delete', 'request', 'subscription'];
 
         return $behaviors;
     }
@@ -64,6 +66,8 @@ class EventController extends ActiveController {
         $event->category_id = $params['category_id'];
         $event->locality_id = $params['locality_id'];
         $event->createdon = time();
+        $event->views = 0;
+        $event->rating = 0;
 
         if(isset($params['introtext'])){
             $event->introtext = $params['introtext'];
@@ -104,20 +108,11 @@ class EventController extends ActiveController {
         if(isset($params['tags'])) {
             $event->tags = $params['tags'];
         }
-        if(isset($params['rating'])) {
-            $event->rating = $params['rating'];
-        }
-        if(isset($params['views'])) {
-            $event->views = $params['views'];
-        }
         if(isset($params['latitude'])) {
             $event->latitude = $params['latitude'];
         }
         if(isset($params['longitude'])) {
             $event->longitude = $params['longitude'];
-        }
-        if(isset($params['published'])) {
-            $event->published = $params['published'];
         }
         if(isset($params['form'])) {
             $event->form = $params['form'];
@@ -137,51 +132,101 @@ class EventController extends ActiveController {
      */
     public function actionUpdate($id)
     {
-        $organization = Organization::findOne($id);
+        $event = Event::findOne($id);
         if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['root'])){
-            if ($organization->user_id !== Yii::$app->user->identity['id']){
+            if ($event->user_id !== Yii::$app->user->identity['id']){
                 throw new ForbiddenHttpException(sprintf('You can only update articles that you\'ve created.'));
             }
         }
 
         $params = (array)json_decode(Yii::$app->getRequest()->getRawBody());
+        $event->title =       $params['title'];
+        $event->alias =       Event::translit($params['title']);
+        $event->organization_id = $params['organization_id'];
+        $event->category_id = $params['category_id'];
+        $event->locality_id = $params['locality_id'];
 
-        $organization->name =        $params['name'];
-        $organization->email =       $params['email'];
-        $organization->alias =       Organization::translit($params['name']);
-
-        if(isset($params['longname'])){
-            $organization->longname = $params['longname'];
-        }
-        if(isset($params['introtext'])) {
-            $organization->introtext = $params['introtext'];
+        if(isset($params['introtext'])){
+            $event->introtext = $params['introtext'];
         }
         if(isset($params['description'])) {
-            $organization->description = $params['description'];
+            $event->description = $params['description'];
         }
         if(isset($params['image'])) {
-            $organization->image = $params['image'];
+            $event->image = $params['image'];
         }
-        if(isset($params['locality_id'])) {
-            $organization->locality_id = $params['locality_id'];
+        if(isset($params['gallery'])) {
+            $event->gallery = $params['gallery'];
+        }
+        if(isset($params['video'])) {
+            $event->video = $params['video'];
         }
         if(isset($params['address'])) {
-            $organization->address = $params['address'];
+            $event->address = $params['address'];
         }
         if(isset($params['phone'])) {
-            $organization->phone = $params['phone'];
+            $event->phone = $params['phone'];
         }
-        if(isset($params['latitude'])) {
-            $organization->latitude = $params['latitude'];
+        if(isset($params['email'])) {
+            $event->email = $params['email'];
         }
-        if(isset($params['longitude'])) {
-            $organization->longitude = $params['longitude'];
+        if(isset($params['contact'])) {
+            $event->contact = $params['contact'];
         }
         if(isset($params['published'])) {
-            $organization->published = $params['published'];
+            $event->published = $params['published'];
         }
-        $organization->save();
-        return $organization;
+        if(isset($params['date'])) {
+            $event->date = $params['date'];
+        }
+        if(isset($params['time'])) {
+            $event->time = $params['time'];
+        }
+        if(isset($params['tags'])) {
+            $event->tags = $params['tags'];
+        }
+        if(isset($params['latitude'])) {
+            $event->latitude = $params['latitude'];
+        }
+        if(isset($params['longitude'])) {
+            $event->longitude = $params['longitude'];
+        }
+        if(isset($params['form'])) {
+            $event->form = $params['form'];
+        }
+        $event->save();
+        return $event;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actionRequest($id)
+    {
+        $event = Event::findOne($id);
+        if (!empty($event->user_id))
+            if ($event->user_id !== Yii::$app->user->identity['id'])
+                throw new ForbiddenHttpException(sprintf('You can only request articles that you\'ve created.'));
+        $requests = Request::find()->where(array('event_id' => $event->id))->all();
+        return $requests;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function actionSubscription($id)
+    {
+        $event = Event::findOne($id);
+        if (!empty($event->user_id))
+            if ($event->user_id !== Yii::$app->user->identity['id'])
+                throw new ForbiddenHttpException(sprintf('You can only request articles that you\'ve created.'));
+        $subscriptions = array();
+        $subscriptionCollection = Subscription::find()->where(array('event_id' => $event->id))->asArray()->all();
+        foreach ($subscriptionCollection as $subscriptionObject) {
+            $user = UserAttributes::find()->where(array("internalKey" => $subscriptionObject['user_id']))->asArray()->one();
+            $subscriptions[] = array("fullname" => $user['fullname'], "photo" => $user['photo']);
+        }
+        return $subscriptions;
     }
 
     /**
