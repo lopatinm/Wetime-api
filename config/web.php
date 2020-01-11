@@ -28,7 +28,7 @@ $config = [
         'response' => [
             'on beforeSend' => function (yii\base\Event $event) {
                 $response = $event->sender;
-                if ((500 === $response->statusCode || 404 === $response->statusCode || 401 === $response->statusCode || 403 === $response->statusCode) && is_array($response->data)) {
+                if ((204 === $response->statusCode || 500 === $response->statusCode || 404 === $response->statusCode || 401 === $response->statusCode || 403 === $response->statusCode) && is_array($response->data)) {
                     if($response->data['code'] == 485){
                         $response->data['name'] = "Already exist";
                     }

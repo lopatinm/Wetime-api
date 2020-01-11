@@ -52,7 +52,7 @@ class OrganizationController extends ActiveController {
             if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['administrator']))
                 throw new ForbiddenHttpException(sprintf('You can only create articles that you\'ve created.'));
 
-        $params = (array)json_decode(Yii::$app->getRequest()->getRawBody());
+        $params = Yii::$app->getRequest()->getBodyParams();
         $params['user_id'] = Yii::$app->user->identity['id'];
         $organization = new Organization;
         $organization->user_id =     $params['user_id'];
@@ -106,7 +106,7 @@ class OrganizationController extends ActiveController {
             }
         }
 
-        $params = (array)json_decode(Yii::$app->getRequest()->getRawBody());
+        $params = Yii::$app->getRequest()->getBodyParams();
 
         $organization->name =        $params['name'];
         $organization->email =       $params['email'];

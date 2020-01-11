@@ -14,6 +14,8 @@ use yii\filters\Cors;
 use yii\helpers\ArrayHelper;
 use yii\rest\ActiveController;
 use yii\web\ForbiddenHttpException;
+use yii\web\HttpException;
+use yii\web\NotFoundHttpException;
 
 class EventController extends ActiveController {
 
@@ -34,7 +36,7 @@ class EventController extends ActiveController {
 
     public function actions(){
         $actions = parent::actions();
-        unset($actions['index'], $actions['create'], $actions['update']);
+        unset($actions['index'], $actions['create'], $actions['update'], $actions['delete']);
         return $actions;
     }
 
@@ -56,7 +58,7 @@ class EventController extends ActiveController {
                 if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['manager']))
                     throw new ForbiddenHttpException(sprintf('You can only create articles that you\'ve created.'));
 
-        $params = (array)json_decode(Yii::$app->getRequest()->getRawBody());
+        $params = Yii::$app->getRequest()->getBodyParams();
         $params['user_id'] = Yii::$app->user->identity['id'];
         $event = new Event;
         $event->user_id =     $params['user_id'];
@@ -128,78 +130,120 @@ class EventController extends ActiveController {
     }
 
     /**
-     * @inheritdoc
+     * @param $id
+     * @return Event
+     * @throws ForbiddenHttpException
+     * @throws NotFoundHttpException
+     * @throws \yii\base\InvalidConfigException
      */
     public function actionUpdate($id)
     {
-        $event = Event::findOne($id);
-        if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['root'])){
-            if ($event->user_id !== Yii::$app->user->identity['id']){
-                throw new ForbiddenHttpException(sprintf('You can only update articles that you\'ve created.'));
+        if(Event::findOne($id) != null){
+            $event = Event::findOne($id);
+            if(!isset(Yii::$app->authManager->getRolesByUser(Yii::$app->user->identity['id'])['root'])){
+                if ($event->user_id !== Yii::$app->user->identity['id']){
+                    throw new ForbiddenHttpException(sprintf('You can only update articles that you\'ve created.'));
+                }
             }
-        }
 
-        $params = (array)json_decode(Yii::$app->getRequest()->getRawBody());
-        $event->title =       $params['title'];
-        $event->alias =       Event::translit($params['title']);
-        $event->organization_id = $params['organization_id'];
-        $event->category_id = $params['category_id'];
-        $event->locality_id = $params['locality_id'];
+            $params = Yii::$app->getRequest()->getBodyParams();
+            $event->title =       $params['title'];
+            $event->alias =       Event::translit($params['title']);
+            $event->organization_id = $params['organization_id'];
+            $event->category_id = $params['category_id'];
+            $event->locality_id = $params['locality_id'];
 
-        if(isset($params['introtext'])){
-            $event->introtext = $params['introtext'];
+            if(isset($params['introtext'])){
+                $event->introtext = $params['introtext'];
+            }
+            if(isset($params['description'])) {
+                $event->description = $params['description'];
+            }
+            if(isset($params['image'])) {
+                $event->image = $params['image'];
+            }
+            if(isset($params['gallery'])) {
+                $event->gallery = $params['gallery'];
+            }
+            if(isset($params['video'])) {
+                $event->video = $params['video'];
+            }
+            if(isset($params['address'])) {
+                $event->address = $params['address'];
+            }
+            if(isset($params['phone'])) {
+                $event->phone = $params['phone'];
+            }
+            if(isset($params['email'])) {
+                $event->email = $params['email'];
+            }
+            if(isset($params['contact'])) {
+                $event->contact = $params['contact'];
+            }
+            if(isset($params['published'])) {
+                $event->published = $params['published'];
+            }
+            if(isset($params['date'])) {
+                $event->date = $params['date'];
+            }
+            if(isset($params['time'])) {
+                $event->time = $params['time'];
+            }
+            if(isset($params['tags'])) {
+                $event->tags = $params['tags'];
+            }
+            if(isset($params['latitude'])) {
+                $event->latitude = $params['latitude'];
+            }
+            if(isset($params['longitude'])) {
+                $event->longitude = $params['longitude'];
+            }
+            if(isset($params['form'])) {
+                $event->form = $params['form'];
+            }
+            $event->save();
+            return $event;
+        }else{
+            throw new NotFoundHttpException(sprintf('Event for ID '.$id.' not found'));
         }
-        if(isset($params['description'])) {
-            $event->description = $params['description'];
+    }
+
+
+    /**
+     * @param $id
+     * @throws ForbiddenHttpException
+     * @throws NotFoundHttpException
+     * @throws \Exception
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
+     */
+    public function actionDelete($id)
+    {
+        if(Event::findOne($id) != null) {
+            $event = Event::findOne($id);
+            if (!empty($event->user_id))
+                if ($event->user_id !== Yii::$app->user->identity['id'])
+                    throw new ForbiddenHttpException(sprintf('You can only delete articles that you\'ve created.'));
+
+            $requests = Request::find()->where(array('event_id' => $event->id))->count();
+            $subscriptions = Subscription::find()->where(array('event_id' => $event->id))->count();
+            if($requests > 0)
+                throw new ForbiddenHttpException(sprintf('It is not possible to delete, there are dependencies: Requests.'));
+            if($subscriptions > 0)
+                throw new ForbiddenHttpException(sprintf('It is not possible to delete, there are dependencies: Subscriptions.'));
+            $calendar = Calendar::find()->where(array('event_id'=>$event->id))->one();
+            $calendar->delete();
+            $event->delete();
+            throw new HttpException(204, sprintf('Event for ID %s Remove', $id), 204);
+        }else{
+            throw new NotFoundHttpException(sprintf('Event for ID '.$id.' not found'));
         }
-        if(isset($params['image'])) {
-            $event->image = $params['image'];
-        }
-        if(isset($params['gallery'])) {
-            $event->gallery = $params['gallery'];
-        }
-        if(isset($params['video'])) {
-            $event->video = $params['video'];
-        }
-        if(isset($params['address'])) {
-            $event->address = $params['address'];
-        }
-        if(isset($params['phone'])) {
-            $event->phone = $params['phone'];
-        }
-        if(isset($params['email'])) {
-            $event->email = $params['email'];
-        }
-        if(isset($params['contact'])) {
-            $event->contact = $params['contact'];
-        }
-        if(isset($params['published'])) {
-            $event->published = $params['published'];
-        }
-        if(isset($params['date'])) {
-            $event->date = $params['date'];
-        }
-        if(isset($params['time'])) {
-            $event->time = $params['time'];
-        }
-        if(isset($params['tags'])) {
-            $event->tags = $params['tags'];
-        }
-        if(isset($params['latitude'])) {
-            $event->latitude = $params['latitude'];
-        }
-        if(isset($params['longitude'])) {
-            $event->longitude = $params['longitude'];
-        }
-        if(isset($params['form'])) {
-            $event->form = $params['form'];
-        }
-        $event->save();
-        return $event;
     }
 
     /**
-     * @inheritdoc
+     * @param $id
+     * @return array|\yii\db\ActiveRecord[]
+     * @throws ForbiddenHttpException
      */
     public function actionRequest($id)
     {
@@ -211,8 +255,11 @@ class EventController extends ActiveController {
         return $requests;
     }
 
+
     /**
-     * @inheritdoc
+     * @param $id
+     * @return array
+     * @throws ForbiddenHttpException
      */
     public function actionSubscription($id)
     {
@@ -227,19 +274,5 @@ class EventController extends ActiveController {
             $subscriptions[] = array("fullname" => $user['fullname'], "photo" => $user['photo']);
         }
         return $subscriptions;
-    }
-
-    /**
-     * @param string $action
-     * @param null $model
-     * @param array $params
-     * @throws ForbiddenHttpException
-     */
-    public function checkAccess($action, $model = null, $params = []){
-        if ($action === 'delete') {
-            if (!empty($model->user_id))
-                if ($model->user_id !== Yii::$app->user->identity['id'])
-                    throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
-        }
     }
 }
