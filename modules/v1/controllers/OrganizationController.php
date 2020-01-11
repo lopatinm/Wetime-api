@@ -1,6 +1,7 @@
 <?php
 namespace app\modules\v1\controllers;
 
+use app\modules\v1\models\Event;
 use app\modules\v1\models\Organization;
 use Yii;
 use yii\base\InvalidConfigException;
@@ -10,6 +11,8 @@ use yii\filters\Cors;
 use yii\helpers\ArrayHelper;
 use yii\rest\ActiveController;
 use yii\web\ForbiddenHttpException;
+use yii\web\HttpException;
+use yii\web\NotFoundHttpException;
 
 class OrganizationController extends ActiveController {
 
@@ -31,7 +34,7 @@ class OrganizationController extends ActiveController {
 
     public function actions(){
         $actions = parent::actions();
-        unset($actions['index'], $actions['create'], $actions['update']);
+        unset($actions['index'], $actions['create'], $actions['update'], $actions['delete']);
         return $actions;
     }
 
@@ -43,8 +46,11 @@ class OrganizationController extends ActiveController {
         return $activeData;
     }
 
+
     /**
-     * @inheritdoc
+     * @return Organization
+     * @throws ForbiddenHttpException
+     * @throws InvalidConfigException
      */
     public function actionCreate()
     {
@@ -94,8 +100,12 @@ class OrganizationController extends ActiveController {
         return $organization;
     }
 
+
     /**
-     * @inheritdoc
+     * @param $id
+     * @return Organization
+     * @throws ForbiddenHttpException
+     * @throws InvalidConfigException
      */
     public function actionUpdate($id)
     {
@@ -147,16 +157,28 @@ class OrganizationController extends ActiveController {
     }
 
     /**
-     * @param string $action
-     * @param null $model
-     * @param array $params
+     * @param $id
      * @throws ForbiddenHttpException
+     * @throws \Exception
+     * @throws \Throwable
+     * @throws \yii\db\StaleObjectException
      */
-    public function checkAccess($action, $model = null, $params = []){
-        if ($action === 'delete') {
-            if (!empty($model->user_id))
-                if ($model->user_id !== Yii::$app->user->identity['id'])
-                    throw new ForbiddenHttpException(sprintf('You can only %s articles that you\'ve created.', $action));
+    public function actionDelete($id)
+    {
+        if(Organization::findOne($id) != null) {
+            $organization = Organization::findOne($id);
+            if (!empty($organization->user_id))
+                if ($organization->user_id !== Yii::$app->user->identity['id'])
+                    throw new ForbiddenHttpException(sprintf('You can only delete articles that you\'ve created.'));
+
+            $events = Event::find()->where(array('organization_id' => $organization->id))->count();
+
+            if($events > 0)
+                throw new ForbiddenHttpException(sprintf('It is not possible to delete, there are dependencies: Event.'));
+            $organization->delete();
+            throw new HttpException(204, sprintf('Organization for ID %s Remove', $id), 204);
+        }else{
+            throw new NotFoundHttpException(sprintf('Organization for ID '.$id.' not found'));
         }
     }
 }
