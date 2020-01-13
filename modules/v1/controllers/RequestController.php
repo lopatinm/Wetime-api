@@ -38,6 +38,13 @@ class RequestController extends ActiveController {
     }
 
     /**
+     * @api {get} /v1/request Список заявок
+     * @apiName Index
+     * @apiGroup Request
+     * @apiVersion 1.0.0
+     *
+     */
+    /**
      * @return ActiveDataProvider
      */
     public function actionIndex(){
@@ -48,6 +55,15 @@ class RequestController extends ActiveController {
         return $activeData;
     }
 
+    /**
+     * @api {post} /v1/request Создание заявки
+     * @apiName Create
+     * @apiGroup Request
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {Integer} event_id ID мероприятия
+     * @apiParam {Json} request Обьект заявки
+     */
     /**
      * @return Request|array
      * @throws HttpException
@@ -73,6 +89,14 @@ class RequestController extends ActiveController {
         return $response;
     }
 
+    /**
+     * @api {post} /v1/request/{id} Обновление статуса заявки
+     * @apiName Update
+     * @apiGroup Request
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {Integer} status_id ID статуса
+     */
     /**
      * @param $id
      * @return Request|array

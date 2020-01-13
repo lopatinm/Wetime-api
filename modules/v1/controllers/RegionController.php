@@ -35,6 +35,13 @@ class RegionController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/region Список регионов
+     * @apiName Region
+     * @apiGroup Region
+     * @apiVersion 1.0.0
+     *
+     */
     public function actionIndex(){
         $model = new Region;
         $activeData = new ActiveDataProvider([

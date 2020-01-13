@@ -20,6 +20,10 @@ use yii\web\NotFoundHttpException;
 class EventController extends ActiveController {
 
     public $modelClass = 'app\modules\v1\models\Event';
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {
@@ -48,6 +52,39 @@ class EventController extends ActiveController {
         return $activeData;
     }
 
+    /**
+     * @api {post} /v1/event Создание мероприятия
+     * @apiName Create
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     *
+     * @apiParam {Integer} organization_id ID организации
+     * @apiParam {Integer} locality_id ID населенного пункта
+     * @apiParam {Integer} category_id ID категории
+     * @apiParam {String} title Название мероприятия
+     * @apiParam {String} [introtext] Краткое описание мероприятия
+     * @apiParam {String} [description] Подробное описание мероприятия
+     * @apiParam {String} [image] URL картинки мероприятия
+     * @apiParam {String} [gallery] Список URL картинок мероприятия
+     * @apiParam {String} [video] URL видео мероприятия
+     * @apiParam {String} [address] Адрес места проведения мероприятия
+     * @apiParam {String} [phone] Контактный телефон ответсвенного мероприятия
+     * @apiParam {String} [email] Электронная почта ответсвенного мероприятия
+     * @apiParam {String} [contact] ФИО ответсвенного мероприятия
+     * @apiParam {Integer} published Статус публикации мероприятия
+     * @apiParam {Unixtime} date Дата начала мероприятия
+     * @apiParam {String} time Время начала мероприятия
+     * @apiParam {String} [tags] Теги мероприятия
+     * @apiParam {String} [latitude] Широта на карте места проведения мероприятия
+     * @apiParam {String} [longitude] Долгота на карте места проведения мероприятия
+     * @apiParam {json} [form] Форма заявки мероприятия
+     */
     /**
      * @inheritdoc
      */
@@ -130,6 +167,40 @@ class EventController extends ActiveController {
     }
 
     /**
+     * @api {put} /v1/event/{id} Обновление мероприятия
+     * @apiDescription Для обновления мероприятия нажно передать {id} - ID мероприятия в URL
+     * @apiName Update
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     *
+     * @apiParam {Integer} organization_id ID организации
+     * @apiParam {Integer} locality_id ID населенного пункта
+     * @apiParam {Integer} category_id ID категории
+     * @apiParam {String} title Название мероприятия
+     * @apiParam {String} [introtext] Краткое описание мероприятия
+     * @apiParam {String} [description] Подробное описание мероприятия
+     * @apiParam {String} [image] URL картинки мероприятия
+     * @apiParam {String} [gallery] Список URL картинок мероприятия
+     * @apiParam {String} [video] URL видео мероприятия
+     * @apiParam {String} [address] Адрес места проведения мероприятия
+     * @apiParam {String} [phone] Контактный телефон ответсвенного мероприятия
+     * @apiParam {String} [email] Электронная почта ответсвенного мероприятия
+     * @apiParam {String} [contact] ФИО ответсвенного мероприятия
+     * @apiParam {Integer} published Статус публикации мероприятия
+     * @apiParam {Unixtime} date Дата начала мероприятия
+     * @apiParam {String} time Время начала мероприятия
+     * @apiParam {String} [tags] Теги мероприятия
+     * @apiParam {String} [latitude] Широта на карте места проведения мероприятия
+     * @apiParam {String} [longitude] Долгота на карте места проведения мероприятия
+     * @apiParam {json} [form] Форма заявки мероприятия
+     */
+    /**
      * @param $id
      * @return Event
      * @throws ForbiddenHttpException
@@ -208,7 +279,19 @@ class EventController extends ActiveController {
         }
     }
 
-
+    /**
+     * @api {delete} /v1/event/{id} Удаление мероприятия
+     * @apiDescription Для удаления мероприятия нажно передать {id} - ID мероприятия в URL
+     * @apiName Delete
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
     /**
      * @param $id
      * @throws ForbiddenHttpException
@@ -241,6 +324,19 @@ class EventController extends ActiveController {
     }
 
     /**
+     * @api {get} /v1/event/{id}/request Список заявок на мероприятие
+     * @apiDescription Для получения списка заявок мероприятия нажно передать {id} - ID мероприятия в URL
+     * @apiName Request
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
+    /**
      * @param $id
      * @return array|\yii\db\ActiveRecord[]
      * @throws ForbiddenHttpException
@@ -255,7 +351,19 @@ class EventController extends ActiveController {
         return $requests;
     }
 
-
+    /**
+     * @api {get} /v1/event/{id}/subscription Список подписок на мероприятие
+     * @apiDescription Для получения списка подписок мероприятия нажно передать {id} - ID мероприятия в URL
+     * @apiName Subscription
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
     /**
      * @param $id
      * @return array
@@ -274,5 +382,54 @@ class EventController extends ActiveController {
             $subscriptions[] = array("fullname" => $user['fullname'], "photo" => $user['photo']);
         }
         return $subscriptions;
+    }
+
+    /**
+     * @api {get} /v1/event/sort/{field}/{order} Сортировка списка мероприятий
+     * @apiDescription Для сортировки списка мероприятий нажно передать {field} - Поле мероприятия в URL по которому будет сортировка, и {order} - порядок сортировки.
+     * Возможные значения: {field} - rating|date|createdon, {order} - desc|asc.
+     * @apiName Sort
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission none
+     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     */
+    public function actionSort()
+    {
+        $url = explode('/', Yii::$app->request->pathInfo);
+        $field = $url[3];
+        $order = $url[4];
+        $model = new Event;
+        $activeData = new ActiveDataProvider([
+            'query' => $model::find()->orderBy($field." ".$order),
+        ]);
+        return $activeData;
+    }
+
+    /**
+     * @api {get} /v1/event/filter/{organization|locality|category}/{id}  Фильтрация списка мероприятий
+     * @apiName Filter
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiPermission none
+     * @apiHeader {String = application/json, application/xml} Content-type=application/json MIME тип ресурса.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     */
+    /**
+     * @param $id
+     * @return ActiveDataProvider
+     */
+    public function actionFilter($id)
+    {
+        $url = explode('/', Yii::$app->request->pathInfo);
+        $field = $url[3];
+        $model = new Event;
+        $activeData = new ActiveDataProvider([
+            'query' => $model::find()->where(array($field.'_id' => $id))->orderBy("id DESC"),
+        ]);
+        return $activeData;
     }
 }

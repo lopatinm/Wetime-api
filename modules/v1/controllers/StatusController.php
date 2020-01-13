@@ -35,6 +35,13 @@ class StatusController extends ActiveController {
     }
 
     /**
+     * @api {get} /v1/status Список статусов заявок
+     * @apiName Status
+     * @apiGroup Status
+     * @apiVersion 1.0.0
+     *
+     */
+    /**
      * @return ActiveDataProvider
      */
     public function actionIndex(){
@@ -45,6 +52,13 @@ class StatusController extends ActiveController {
         return $activeData;
     }
 
+    /**
+     * @api {get} /v1/status/{id} Статус заявки
+     * @apiName View
+     * @apiGroup Status
+     * @apiVersion 1.0.0
+     *
+     */
     /**
      * @param $id
      * @return Status
@@ -59,6 +73,14 @@ class StatusController extends ActiveController {
         }
     }
 
+    /**
+     * @api {post} /v1/status Создание статуса заявки
+     * @apiName Create
+     * @apiGroup Status
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} name Название статуса
+     */
     /**
      * @return Status
      * @throws ForbiddenHttpException
@@ -78,6 +100,14 @@ class StatusController extends ActiveController {
         return $status;
     }
 
+    /**
+     * @api {post} /v1/status/{id} Обновление статуса заявки
+     * @apiName Update
+     * @apiGroup Status
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} name Название статуса
+     */
     /**
      * @param $id
      * @return Status

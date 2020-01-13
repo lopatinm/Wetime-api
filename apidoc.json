@@ -1,0 +1,12 @@
+{
+  "name": "Wetime",
+  "version": "1.0.0",
+  "description": "Единый календарь событий",
+  "title": "Документация Wetime",
+  "url" : "https://api.wetime.ru",
+  "sampleUrl": "https://api.wetime.ru",
+  "template": {
+    "withCompare": true,
+    "withGenerator": true
+  }
+}

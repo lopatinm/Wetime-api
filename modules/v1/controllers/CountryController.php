@@ -34,7 +34,13 @@ class CountryController extends ActiveController {
         unset($actions['index']);
         return $actions;
     }
-
+    /**
+     * @api {get} /v1/country Список стран
+     * @apiName Country
+     * @apiGroup Country
+     * @apiVersion 1.0.0
+     *
+     */
     public function actionIndex(){
         $model = new Country;
         $activeData = new ActiveDataProvider([

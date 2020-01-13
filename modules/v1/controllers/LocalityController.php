@@ -35,6 +35,13 @@ class LocalityController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/locality Список населенных пунктов
+     * @apiName Locality
+     * @apiGroup Locality
+     * @apiVersion 1.0.0
+     *
+     */
     public function actionIndex(){
         $model = new Locality;
         $activeData = new ActiveDataProvider([

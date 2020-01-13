@@ -35,6 +35,13 @@ class DistrictController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/district Список районов
+     * @apiName District
+     * @apiGroup District
+     * @apiVersion 1.0.0
+     *
+     */
     public function actionIndex(){
         $model = new District;
         $activeData = new ActiveDataProvider([

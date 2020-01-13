@@ -34,6 +34,13 @@ class CategoryController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/category Список категорий
+     * @apiName Category
+     * @apiGroup Category
+     * @apiVersion 1.0.0
+     *
+     */
     public function actionIndex(){
         $model = new Category;
         $activeData = new ActiveDataProvider([

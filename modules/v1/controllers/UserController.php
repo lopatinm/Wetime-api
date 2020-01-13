@@ -42,6 +42,15 @@ class UserController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/user Список пользователей
+     * @apiName user
+     * @apiGroup User
+     * @apiVersion 1.0.0
+     *
+     * @apiHeader {String} Authorization Токен авторизации, Формат значения: Bearer {token}
+     *
+     */
     public function actionIndex(){
         $model = new UserAttributes;
         $activeData = new ActiveDataProvider([
@@ -50,6 +59,16 @@ class UserController extends ActiveController {
         return $activeData;
     }
 
+    /**
+     * @api {post} /v1/user/access Доступ к организации
+     * @apiName Access
+     * @apiGroup User
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {Integer} organization ID организации
+     * @apiParam {String} phone Номер телефона
+     *
+     */
     /**
      * @return array
      * @throws ForbiddenHttpException
@@ -103,7 +122,14 @@ class UserController extends ActiveController {
     }
 
     /**
-     * @return array
+     * @api {post} /v1/user/login Авторизация
+     * @apiName Login
+     * @apiGroup User
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} phone Номер телефона
+     * @apiParam {String} password Пароль
+     *
      */
     public function actionLogin(){
         $response = array();
@@ -153,7 +179,14 @@ class UserController extends ActiveController {
     }
 
     /**
-     * @return array
+     * @api {post} /v1/user/registration Регистрация
+     * @apiName Registration
+     * @apiGroup User
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {String} fullname Ф.И.О.
+     * @apiParam {String} phone Номер телефона
+     *
      */
     public function actionRegistration(){
         $response = array();

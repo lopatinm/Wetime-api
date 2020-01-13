@@ -36,6 +36,13 @@ class SubscriptionController extends ActiveController {
     }
 
     /**
+     * @api {get} /v1/subscription Список подписок
+     * @apiName Index
+     * @apiGroup Subscription
+     * @apiVersion 1.0.0
+     *
+     */
+    /**
      * @return ActiveDataProvider
      */
     public function actionIndex(){
@@ -46,6 +53,14 @@ class SubscriptionController extends ActiveController {
         return $activeData;
     }
 
+    /**
+     * @api {post} /v1/subscription Создание подписки
+     * @apiName Create
+     * @apiGroup Subscription
+     * @apiVersion 1.0.0
+     *
+     * @apiParam {Integer} event_id ID мероприятия
+     */
     /**
      * @return Subscription
      * @throws HttpException
