@@ -17,6 +17,10 @@ use yii\web\NotFoundHttpException;
 class OrganizationController extends ActiveController {
 
     public $modelClass = 'app\modules\v1\models\Organization';
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {

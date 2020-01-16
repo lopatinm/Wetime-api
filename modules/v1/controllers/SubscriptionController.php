@@ -15,6 +15,10 @@ use yii\web\ForbiddenHttpException;
 class SubscriptionController extends ActiveController {
 
     public $modelClass = 'app\modules\v1\models\Subscription';
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {

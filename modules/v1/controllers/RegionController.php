@@ -14,6 +14,10 @@ use yii\web\ForbiddenHttpException;
 class RegionController extends ActiveController {
 
     public $modelClass = 'app\modules\v1\models\Region';
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {

@@ -59,6 +59,10 @@ class UserController extends ActiveController {
         $model = new UserAttributes;
         $activeData = new ActiveDataProvider([
             'query' => $model::find()->orderBy("id DESC"),
+            'pagination' => [
+                'defaultPageSize' => -1,
+                'pageSizeLimit' => -1,
+            ],
         ]);
         return $activeData;
     }

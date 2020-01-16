@@ -14,6 +14,10 @@ use yii\web\ForbiddenHttpException;
 class DistrictController extends ActiveController {
 
     public $modelClass = 'app\modules\v1\models\District';
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {
@@ -46,6 +50,10 @@ class DistrictController extends ActiveController {
         $model = new District;
         $activeData = new ActiveDataProvider([
             'query' => $model::find()->orderBy("id DESC"),
+            'pagination' => [
+                'defaultPageSize' => -1,
+                'pageSizeLimit' => -1,
+            ],
         ]);
         return $activeData;
     }

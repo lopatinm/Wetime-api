@@ -13,6 +13,10 @@ use yii\web\ForbiddenHttpException;
 class StatusController extends ActiveController {
 
     public $modelClass = 'app\modules\v1\models\Status';
+    public $serializer = [
+        'class' => 'yii\rest\Serializer',
+        'collectionEnvelope' => 'items',
+    ];
 
     public function behaviors()
     {
