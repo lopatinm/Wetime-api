@@ -47,8 +47,12 @@ class UserController extends ActiveController {
      * @apiName user
      * @apiGroup User
      * @apiVersion 1.0.0
-     *
-     * @apiHeader {String} Authorization Токен авторизации, Формат значения: Bearer {token}
+     * @apiPermission root
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      */
     public function actionIndex(){
@@ -64,6 +68,12 @@ class UserController extends ActiveController {
      * @apiName Access
      * @apiGroup User
      * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      * @apiParam {Integer} organization ID организации
      * @apiParam {String} phone Номер телефона

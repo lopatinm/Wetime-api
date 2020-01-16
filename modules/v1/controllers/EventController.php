@@ -44,6 +44,15 @@ class EventController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/event Получение списка мероприятий
+     * @apiName Event
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     */
     public function actionIndex(){
         $model = new Event;
         $activeData = new ActiveDataProvider([
@@ -57,8 +66,8 @@ class EventController extends ActiveController {
      * @apiName Create
      * @apiGroup Event
      * @apiVersion 1.0.0
-     * @apiPermission administrator
-     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeader {String} Authorization token авторизации.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
@@ -172,8 +181,8 @@ class EventController extends ActiveController {
      * @apiName Update
      * @apiGroup Event
      * @apiVersion 1.0.0
-     * @apiPermission administrator
-     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeader {String} Authorization token авторизации.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
@@ -285,8 +294,8 @@ class EventController extends ActiveController {
      * @apiName Delete
      * @apiGroup Event
      * @apiVersion 1.0.0
-     * @apiPermission administrator
-     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeader {String} Authorization token авторизации.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
@@ -329,8 +338,8 @@ class EventController extends ActiveController {
      * @apiName Request
      * @apiGroup Event
      * @apiVersion 1.0.0
-     * @apiPermission administrator
-     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeader {String} Authorization token авторизации.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
@@ -357,8 +366,8 @@ class EventController extends ActiveController {
      * @apiName Subscription
      * @apiGroup Event
      * @apiVersion 1.0.0
-     * @apiPermission administrator
-     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeader {String} Authorization token авторизации.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
@@ -386,13 +395,13 @@ class EventController extends ActiveController {
 
     /**
      * @api {get} /v1/event/sort/{field}/{order} Сортировка списка мероприятий
-     * @apiDescription Для сортировки списка мероприятий нажно передать {field} - Поле мероприятия в URL по которому будет сортировка, и {order} - порядок сортировки.
-     * Возможные значения: {field} - rating|date|createdon, {order} - desc|asc.
+     * @apiDescription {field} - Поле мероприятия в URL по которому будет сортировка. {order} - порядок сортировки.
+     * Возможные значения: {field} - rating, date, createdon, {order} - desc, asc.
      * @apiName Sort
      * @apiGroup Event
      * @apiVersion 1.0.0
      * @apiPermission none
-     * @apiHeader {String} Content-type MIME тип ресурса, например: application/json or application/xml.
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
      */
@@ -409,12 +418,13 @@ class EventController extends ActiveController {
     }
 
     /**
-     * @api {get} /v1/event/filter/{organization|locality|category}/{id}  Фильтрация списка мероприятий
+     * @api {get} /v1/event/filter/{field}/{id}  Фильтрация списка мероприятий
+     * @apiDescription {field} - поле фильтрации, возможные значения: organization, locality, category. {id} - ID обьекта фильтрации
      * @apiName Filter
      * @apiGroup Event
      * @apiVersion 1.0.0
      * @apiPermission none
-     * @apiHeader {String = application/json, application/xml} Content-type=application/json MIME тип ресурса.
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
      * @apiHeaderExample {String} Пример заголовка:
      *     "Content-type": "application/json"
      */

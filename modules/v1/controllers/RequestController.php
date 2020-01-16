@@ -39,9 +39,14 @@ class RequestController extends ActiveController {
 
     /**
      * @api {get} /v1/request Список заявок
-     * @apiName Index
+     * @apiName Request
      * @apiGroup Request
      * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      */
     /**
@@ -60,6 +65,11 @@ class RequestController extends ActiveController {
      * @apiName Create
      * @apiGroup Request
      * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      * @apiParam {Integer} event_id ID мероприятия
      * @apiParam {Json} request Обьект заявки
@@ -90,10 +100,17 @@ class RequestController extends ActiveController {
     }
 
     /**
-     * @api {post} /v1/request/{id} Обновление статуса заявки
+     * @api {put} /v1/request/{id} Обновление статуса заявки
+     * @apiDescription {id} - ID заявки
      * @apiName Update
      * @apiGroup Request
      * @apiVersion 1.0.0
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      * @apiParam {Integer} status_id ID статуса
      */
@@ -120,6 +137,22 @@ class RequestController extends ActiveController {
         }
 
         return $response;
+    }
+
+    /**
+     * @api {delete} /v1/request/{id} Удаление заявки
+     * @apiDescription {id} - ID заявки
+     * @apiName Delete
+     * @apiGroup Request
+     * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
+    public function actionDelete(){
+
     }
 
     /**

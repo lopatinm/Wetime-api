@@ -39,6 +39,12 @@ class StatusController extends ActiveController {
      * @apiName Status
      * @apiGroup Status
      * @apiVersion 1.0.0
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      */
     /**
@@ -57,6 +63,12 @@ class StatusController extends ActiveController {
      * @apiName View
      * @apiGroup Status
      * @apiVersion 1.0.0
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      */
     /**
@@ -78,6 +90,12 @@ class StatusController extends ActiveController {
      * @apiName Create
      * @apiGroup Status
      * @apiVersion 1.0.0
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      * @apiParam {String} name Название статуса
      */
@@ -101,10 +119,16 @@ class StatusController extends ActiveController {
     }
 
     /**
-     * @api {post} /v1/status/{id} Обновление статуса заявки
+     * @api {put} /v1/status/{id} Обновление статуса заявки
      * @apiName Update
      * @apiGroup Status
      * @apiVersion 1.0.0
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      * @apiParam {String} name Название статуса
      */
@@ -127,6 +151,23 @@ class StatusController extends ActiveController {
         $status->alias =       Status::translit($params['name']);
         $status->save();
         return $status;
+    }
+
+    /**
+     * @api {delete} /v1/status/{id} Удаление статуса
+     * @apiDescription {id} - ID статуса
+     * @apiName Delete
+     * @apiGroup Status
+     * @apiVersion 1.0.0
+     * @apiPermission administrator, manager
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
+    public function actionDelete(){
+
     }
 
     /**

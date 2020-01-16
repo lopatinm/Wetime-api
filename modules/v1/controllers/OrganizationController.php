@@ -38,6 +38,15 @@ class OrganizationController extends ActiveController {
         return $actions;
     }
 
+    /**
+     * @api {get} /v1/organization Получение списка организация
+     * @apiName Organization
+     * @apiGroup Organization
+     * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     */
     public function actionIndex(){
         $model = new Organization;
         $activeData = new ActiveDataProvider([
@@ -46,7 +55,31 @@ class OrganizationController extends ActiveController {
         return $activeData;
     }
 
-
+    /**
+     * @api {post} /v1/organization Создание организации
+     * @apiName Create
+     * @apiGroup Organization
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     *
+     * @apiParam {String} name Название организации
+     * @apiParam {String} longname Полное название организации
+     * @apiParam {String} introtext Краткое описание организации
+     * @apiParam {String} description Полное описание организации
+     * @apiParam {String} image URL логотипа организации
+     * @apiParam {Integer} locality_id ID населенного пункта
+     * @apiParam {String} address Адрес организации
+     * @apiParam {String} phone Номер телефона организации
+     * @apiParam {String} email Электронная почта организации
+     * @apiParam {String} latitude Широта на карте места организации
+     * @apiParam {String} longitude Долгота на карте места организации
+     * @apiParam {Integer} published Статус публикации организации
+     */
     /**
      * @return Organization
      * @throws ForbiddenHttpException
@@ -100,7 +133,32 @@ class OrganizationController extends ActiveController {
         return $organization;
     }
 
-
+    /**
+     * @api {put} /v1/organization/{id} Обновление организации
+     * @apiDescription {id} - ID организации
+     * @apiName Update
+     * @apiGroup Organization
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     *
+     * @apiParam {String} name Название организации
+     * @apiParam {String} longname Полное название организации
+     * @apiParam {String} introtext Краткое описание организации
+     * @apiParam {String} description Полное описание организации
+     * @apiParam {String} image URL логотипа организации
+     * @apiParam {Integer} locality_id ID населенного пункта
+     * @apiParam {String} address Адрес организации
+     * @apiParam {String} phone Номер телефона организации
+     * @apiParam {String} email Электронная почта организации
+     * @apiParam {String} latitude Широта на карте места организации
+     * @apiParam {String} longitude Долгота на карте места организации
+     * @apiParam {Integer} published Статус публикации организации
+     */
     /**
      * @param $id
      * @return Organization
@@ -156,6 +214,19 @@ class OrganizationController extends ActiveController {
         return $organization;
     }
 
+    /**
+     * @api {delete} /v1/organization/{id} Удаление организации
+     * @apiDescription {id} - ID организации
+     * @apiName Delete
+     * @apiGroup Organization
+     * @apiVersion 1.0.0
+     * @apiPermission administrator
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
     /**
      * @param $id
      * @throws ForbiddenHttpException

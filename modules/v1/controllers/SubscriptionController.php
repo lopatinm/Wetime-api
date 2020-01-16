@@ -41,6 +41,12 @@ class SubscriptionController extends ActiveController {
      * @apiGroup Subscription
      * @apiVersion 1.0.0
      *
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     *
      */
     /**
      * @return ActiveDataProvider
@@ -58,6 +64,11 @@ class SubscriptionController extends ActiveController {
      * @apiName Create
      * @apiGroup Subscription
      * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
      *
      * @apiParam {Integer} event_id ID мероприятия
      */
@@ -83,6 +94,22 @@ class SubscriptionController extends ActiveController {
         } catch (InvalidConfigException $e) {
         }
         return $response;
+    }
+
+    /**
+     * @api {delete} /v1/subscription/{id} Удаление подписки
+     * @apiDescription {id} - ID подписки
+     * @apiName Delete
+     * @apiGroup Subscription
+     * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeader {String} Authorization token авторизации.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     *     "Authorization": "Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV"
+     */
+    public function actionDelete(){
+
     }
 
     /**

@@ -53,7 +53,7 @@
     "version": "1.0.0",
     "permission": [
       {
-        "name": "administrator"
+        "name": "administrator, manager"
       }
     ],
     "header": {
@@ -62,9 +62,13 @@
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
             "optional": false,
             "field": "Content-type",
-            "description": "<p>MIME тип ресурса, например: application/json or application/xml.</p>"
+            "description": "<p>MIME тип ресурса.</p>"
           },
           {
             "group": "Header",
@@ -247,7 +251,7 @@
     "version": "1.0.0",
     "permission": [
       {
-        "name": "administrator"
+        "name": "administrator, manager"
       }
     ],
     "header": {
@@ -256,9 +260,13 @@
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
             "optional": false,
             "field": "Content-type",
-            "description": "<p>MIME тип ресурса, например: application/json or application/xml.</p>"
+            "description": "<p>MIME тип ресурса.</p>"
           },
           {
             "group": "Header",
@@ -287,8 +295,48 @@
   },
   {
     "type": "get",
-    "url": "/v1/event/filter/{organization|locality|category}/{id}",
+    "url": "/v1/event",
+    "title": "Получение списка мероприятий",
+    "name": "Event",
+    "group": "Event",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/EventController.php",
+    "groupTitle": "Event",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/event"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1/event/filter/{field}/{id}",
     "title": "Фильтрация списка мероприятий",
+    "description": "<p>{field} - поле фильтрации, возможные значения: organization, locality, category. {id} - ID обьекта фильтрации</p>",
     "name": "Filter",
     "group": "Event",
     "version": "1.0.0",
@@ -309,7 +357,6 @@
             ],
             "optional": false,
             "field": "Content-type",
-            "defaultValue": "application/json",
             "description": "<p>MIME тип ресурса.</p>"
           }
         ]
@@ -326,7 +373,7 @@
     "groupTitle": "Event",
     "sampleRequest": [
       {
-        "url": "https://api.wetime.ru/v1/event/filter/{organization|locality|category}/{id}"
+        "url": "https://api.wetime.ru/v1/event/filter/{field}/{id}"
       }
     ]
   },
@@ -340,7 +387,7 @@
     "version": "1.0.0",
     "permission": [
       {
-        "name": "administrator"
+        "name": "administrator, manager"
       }
     ],
     "header": {
@@ -349,9 +396,13 @@
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
             "optional": false,
             "field": "Content-type",
-            "description": "<p>MIME тип ресурса, например: application/json or application/xml.</p>"
+            "description": "<p>MIME тип ресурса.</p>"
           },
           {
             "group": "Header",
@@ -382,7 +433,7 @@
     "type": "get",
     "url": "/v1/event/sort/{field}/{order}",
     "title": "Сортировка списка мероприятий",
-    "description": "<p>Для сортировки списка мероприятий нажно передать {field} - Поле мероприятия в URL по которому будет сортировка, и {order} - порядок сортировки. Возможные значения: {field} - rating|date|createdon, {order} - desc|asc.</p>",
+    "description": "<p>{field} - Поле мероприятия в URL по которому будет сортировка. {order} - порядок сортировки. Возможные значения: {field} - rating, date, createdon, {order} - desc, asc.</p>",
     "name": "Sort",
     "group": "Event",
     "version": "1.0.0",
@@ -397,9 +448,13 @@
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
             "optional": false,
             "field": "Content-type",
-            "description": "<p>MIME тип ресурса, например: application/json or application/xml.</p>"
+            "description": "<p>MIME тип ресурса.</p>"
           }
         ]
       },
@@ -429,7 +484,7 @@
     "version": "1.0.0",
     "permission": [
       {
-        "name": "administrator"
+        "name": "administrator, manager"
       }
     ],
     "header": {
@@ -438,9 +493,13 @@
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
             "optional": false,
             "field": "Content-type",
-            "description": "<p>MIME тип ресурса, например: application/json or application/xml.</p>"
+            "description": "<p>MIME тип ресурса.</p>"
           },
           {
             "group": "Header",
@@ -477,7 +536,7 @@
     "version": "1.0.0",
     "permission": [
       {
-        "name": "administrator"
+        "name": "administrator, manager"
       }
     ],
     "header": {
@@ -486,9 +545,13 @@
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
             "optional": false,
             "field": "Content-type",
-            "description": "<p>MIME тип ресурса, например: application/json or application/xml.</p>"
+            "description": "<p>MIME тип ресурса.</p>"
           },
           {
             "group": "Header",
@@ -677,6 +740,380 @@
     ]
   },
   {
+    "type": "post",
+    "url": "/v1/organization",
+    "title": "Создание организации",
+    "name": "Create",
+    "group": "Organization",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Название организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longname",
+            "description": "<p>Полное название организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "introtext",
+            "description": "<p>Краткое описание организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Полное описание организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "image",
+            "description": "<p>URL логотипа организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "locality_id",
+            "description": "<p>ID населенного пункта</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>Адрес организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>Номер телефона организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Электронная почта организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>Широта на карте места организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>Долгота на карте места организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "published",
+            "description": "<p>Статус публикации организации</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./modules/v1/controllers/OrganizationController.php",
+    "groupTitle": "Organization",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/organization"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1/organization/{id}",
+    "title": "Удаление организации",
+    "description": "<p>{id} - ID организации</p>",
+    "name": "Delete",
+    "group": "Organization",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/OrganizationController.php",
+    "groupTitle": "Organization",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/organization/{id}"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1/organization",
+    "title": "Получение списка организация",
+    "name": "Organization",
+    "group": "Organization",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/OrganizationController.php",
+    "groupTitle": "Organization",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/organization"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1/organization/{id}",
+    "title": "Обновление организации",
+    "description": "<p>{id} - ID организации</p>",
+    "name": "Update",
+    "group": "Organization",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "name",
+            "description": "<p>Название организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longname",
+            "description": "<p>Полное название организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "introtext",
+            "description": "<p>Краткое описание организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "description",
+            "description": "<p>Полное описание организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "image",
+            "description": "<p>URL логотипа организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "locality_id",
+            "description": "<p>ID населенного пункта</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "address",
+            "description": "<p>Адрес организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "phone",
+            "description": "<p>Номер телефона организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "email",
+            "description": "<p>Электронная почта организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "latitude",
+            "description": "<p>Широта на карте места организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longitude",
+            "description": "<p>Долгота на карте места организации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "published",
+            "description": "<p>Статус публикации организации</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./modules/v1/controllers/OrganizationController.php",
+    "groupTitle": "Organization",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/organization/{id}"
+      }
+    ]
+  },
+  {
     "type": "get",
     "url": "/v1/region",
     "title": "Список регионов",
@@ -698,6 +1135,37 @@
     "name": "Create",
     "group": "Request",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -727,12 +1195,90 @@
     ]
   },
   {
+    "type": "delete",
+    "url": "/v1/request/{id}",
+    "title": "Удаление заявки",
+    "description": "<p>{id} - ID заявки</p>",
+    "name": "Delete",
+    "group": "Request",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/RequestController.php",
+    "groupTitle": "Request",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/request/{id}"
+      }
+    ]
+  },
+  {
     "type": "get",
     "url": "/v1/request",
     "title": "Список заявок",
-    "name": "Index",
+    "name": "Request",
     "group": "Request",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "filename": "./modules/v1/controllers/RequestController.php",
     "groupTitle": "Request",
     "sampleRequest": [
@@ -742,12 +1288,49 @@
     ]
   },
   {
-    "type": "post",
+    "type": "put",
     "url": "/v1/request/{id}",
     "title": "Обновление статуса заявки",
+    "description": "<p>{id} - ID заявки</p>",
     "name": "Update",
     "group": "Request",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -776,6 +1359,42 @@
     "name": "Create",
     "group": "Status",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -798,12 +1417,100 @@
     ]
   },
   {
+    "type": "delete",
+    "url": "/v1/status/{id}",
+    "title": "Удаление статуса",
+    "description": "<p>{id} - ID статуса</p>",
+    "name": "Delete",
+    "group": "Status",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/StatusController.php",
+    "groupTitle": "Status",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/status/{id}"
+      }
+    ]
+  },
+  {
     "type": "get",
     "url": "/v1/status",
     "title": "Список статусов заявок",
     "name": "Status",
     "group": "Status",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "filename": "./modules/v1/controllers/StatusController.php",
     "groupTitle": "Status",
     "sampleRequest": [
@@ -813,12 +1520,48 @@
     ]
   },
   {
-    "type": "post",
+    "type": "put",
     "url": "/v1/status/{id}",
     "title": "Обновление статуса заявки",
     "name": "Update",
     "group": "Status",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -847,6 +1590,42 @@
     "name": "View",
     "group": "Status",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "filename": "./modules/v1/controllers/StatusController.php",
     "groupTitle": "Status",
     "sampleRequest": [
@@ -862,6 +1641,37 @@
     "name": "Create",
     "group": "Subscription",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -884,12 +1694,90 @@
     ]
   },
   {
+    "type": "delete",
+    "url": "/v1/subscription/{id}",
+    "title": "Удаление подписки",
+    "description": "<p>{id} - ID подписки</p>",
+    "name": "Delete",
+    "group": "Subscription",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/SubscriptionController.php",
+    "groupTitle": "Subscription",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/subscription/{id}"
+      }
+    ]
+  },
+  {
     "type": "get",
     "url": "/v1/subscription",
     "title": "Список подписок",
     "name": "Index",
     "group": "Subscription",
     "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "filename": "./modules/v1/controllers/SubscriptionController.php",
     "groupTitle": "Subscription",
     "sampleRequest": [
@@ -905,6 +1793,42 @@
     "name": "Access",
     "group": "User",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
     "parameter": {
       "fields": {
         "Parameter": [
@@ -1010,18 +1934,41 @@
     "name": "user",
     "group": "User",
     "version": "1.0.0",
+    "permission": [
+      {
+        "name": "root"
+      }
+    ],
     "header": {
       "fields": {
         "Header": [
           {
             "group": "Header",
             "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
             "optional": false,
             "field": "Authorization",
-            "description": "<p>Токен авторизации, Формат значения: Bearer {token}</p>"
+            "description": "<p>token авторизации.</p>"
           }
         ]
-      }
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
     },
     "filename": "./modules/v1/controllers/UserController.php",
     "groupTitle": "User",
