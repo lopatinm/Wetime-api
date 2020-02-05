@@ -40941,3 +40941,2043 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1578917953.227
     'REQUEST_TIME' => 1578917953
 ]
+2020-01-17 21:51:18 [127.0.0.1][][olo1jq3ff4pg8okdms75rabjib][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The "query" property must be an instance of a class that implements the QueryInterface e.g. yii\db\Query or its subclasses. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/data/ActiveDataProvider.php:102
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/data/BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/data/BaseDataProvider.php(114): yii\data\BaseDataProvider->prepare()
+#2 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#3 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#4 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Controller.php(99): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#5 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Controller.php(77): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#6 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Controller.php(159): yii\rest\Controller->afterAction(Object(yii\base\InlineAction), Object(yii\data\ActiveDataProvider))
+#7 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('index', Array)
+#8 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/post/index', Array)
+#9 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#11 {main}
+2020-01-17 21:51:17 [127.0.0.1][][olo1jq3ff4pg8okdms75rabjib][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => null
+]
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_RESUMED' => 'Initial'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.21.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => '888364cb-21ac-4bdd-892f-f985461871c2'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '49072'
+    'REDIRECT_URL' => '/v1/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579297877.707
+    'REQUEST_TIME' => 1579297877
+]
+2020-01-17 21:51:55 [127.0.0.1][][gtdfj0qr5a5l7rjnirs97l5tbh][error][yii\base\InvalidConfigException] yii\base\InvalidConfigException: The "query" property must be an instance of a class that implements the QueryInterface e.g. yii\db\Query or its subclasses. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/data/ActiveDataProvider.php:102
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/data/BaseDataProvider.php(101): yii\data\ActiveDataProvider->prepareModels()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/data/BaseDataProvider.php(114): yii\data\BaseDataProvider->prepare()
+#2 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Serializer.php(186): yii\data\BaseDataProvider->getModels()
+#3 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Serializer.php(152): yii\rest\Serializer->serializeDataProvider(Object(yii\data\ActiveDataProvider))
+#4 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Controller.php(99): yii\rest\Serializer->serialize(Object(yii\data\ActiveDataProvider))
+#5 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/rest/Controller.php(77): yii\rest\Controller->serializeData(Object(yii\data\ActiveDataProvider))
+#6 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Controller.php(159): yii\rest\Controller->afterAction(Object(yii\base\InlineAction), Object(yii\data\ActiveDataProvider))
+#7 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('index', Array)
+#8 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/post/index', Array)
+#9 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#11 {main}
+2020-01-17 21:51:55 [127.0.0.1][][gtdfj0qr5a5l7rjnirs97l5tbh][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'PHPSESSID' => 'olo1jq3ff4pg8okdms75rabjib'
+    '_csrf' => '2ade7ad212a34d85d4fbaa3127457031d36c48801d145bab5dc26c2d2cf59499a:2:{i:0;s:5:\"_csrf\";i:1;s:32:\"yPBBpEijxAZwO4KspmyW6JQg6JzPeKJo\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => null
+]
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '34d723baf3d8cbeadc234c4bf93c2a21e3ac633922558284107050ec411ecc8b'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_USER_AGENT' => 'PostmanRuntime/7.21.0'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_CACHE_CONTROL' => 'no-cache'
+    'HTTP_POSTMAN_TOKEN' => 'ab554bb3-9080-47aa-b976-5555543c53a2'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_COOKIE' => 'PHPSESSID=olo1jq3ff4pg8okdms75rabjib; _csrf=2ade7ad212a34d85d4fbaa3127457031d36c48801d145bab5dc26c2d2cf59499a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22yPBBpEijxAZwO4KspmyW6JQg6JzPeKJo%22%3B%7D'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '49078'
+    'REDIRECT_URL' => '/v1/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579297915.381
+    'REQUEST_TIME' => 1579297915
+]
+2020-01-18 21:57:54 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 21:57:54 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_RESUMED' => 'Initial'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51538'
+    'REDIRECT_URL' => '/v1/event/2/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/2/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579384674.758
+    'REQUEST_TIME' => 1579384674
+]
+2020-01-18 21:58:32 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 21:58:32 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '0dab25caed137bcee0c7f1da6411e8ec67b72456965541087bfd8856e2ef51ac'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51542'
+    'REDIRECT_URL' => '/v1/event/2/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/2/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579384712.112
+    'REQUEST_TIME' => 1579384712
+]
+2020-01-18 21:58:40 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 21:58:40 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '0dab25caed137bcee0c7f1da6411e8ec67b72456965541087bfd8856e2ef51ac'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51544'
+    'REDIRECT_URL' => '/v1/event/1/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/1/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579384720.527
+    'REQUEST_TIME' => 1579384720
+]
+2020-01-18 21:58:43 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 21:58:43 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '0dab25caed137bcee0c7f1da6411e8ec67b72456965541087bfd8856e2ef51ac'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51544'
+    'REDIRECT_URL' => '/v1/event/2/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/2/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579384723.664
+    'REQUEST_TIME' => 1579384723
+]
+2020-01-18 21:59:09 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 21:59:09 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '0dab25caed137bcee0c7f1da6411e8ec67b72456965541087bfd8856e2ef51ac'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51568'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579384749.246
+    'REQUEST_TIME' => 1579384749
+]
+2020-01-18 21:59:12 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 21:59:12 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '0dab25caed137bcee0c7f1da6411e8ec67b72456965541087bfd8856e2ef51ac'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51568'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579384752.988
+    'REQUEST_TIME' => 1579384752
+]
+2020-01-18 22:05:18 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:05:18 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_RESUMED' => 'Initial'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51724'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385118.556
+    'REQUEST_TIME' => 1579385118
+]
+2020-01-18 22:05:27 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:05:27 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '51782'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385127.754
+    'REQUEST_TIME' => 1579385127
+]
+2020-01-18 22:08:47 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:08:47 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '53382'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385327.283
+    'REQUEST_TIME' => 1579385327
+]
+2020-01-18 22:08:49 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:08:49 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '53382'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385329.136
+    'REQUEST_TIME' => 1579385329
+]
+2020-01-18 22:08:50 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:08:50 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '53382'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385330.433
+    'REQUEST_TIME' => 1579385330
+]
+2020-01-18 22:08:51 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:08:51 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '53382'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385331.76
+    'REQUEST_TIME' => 1579385331
+]
+2020-01-18 22:08:52 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:08:52 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '53382'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385332.856
+    'REQUEST_TIME' => 1579385332
+]
+2020-01-18 22:08:53 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:08:53 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '1fc25c0333bb5237c74138fcad50a8ec8ad7bd666fccbe8eaad1e7fa9f95c4bc'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '53382'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385333.944
+    'REQUEST_TIME' => 1579385333
+]
+2020-01-18 22:13:21 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:13:21 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_RESUMED' => 'Initial'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '55628'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385601.861
+    'REQUEST_TIME' => 1579385601
+]
+2020-01-18 22:13:23 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:13:23 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_RESUMED' => 'Initial'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '55628'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385603.578
+    'REQUEST_TIME' => 1579385603
+]
+2020-01-18 22:13:55 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:13:55 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => 'ffcd0946ab936bc35b8a339a3ca2513f2fd7f7a823c5698d6ef7433fa4bf3a7e'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '55894'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385635.315
+    'REQUEST_TIME' => 1579385635
+]
+2020-01-18 22:14:25 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:14:25 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => 'ffcd0946ab936bc35b8a339a3ca2513f2fd7f7a823c5698d6ef7433fa4bf3a7e'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '56136'
+    'REDIRECT_URL' => '/v1/event/filter/locality/25'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/filter/locality/25'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385665.545
+    'REQUEST_TIME' => 1579385665
+]
+2020-01-18 22:16:29 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:16:29 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => 'ffcd0946ab936bc35b8a339a3ca2513f2fd7f7a823c5698d6ef7433fa4bf3a7e'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '57122'
+    'REDIRECT_URL' => '/v1/event/filter/locality/25'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/filter/locality/25'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385789.036
+    'REQUEST_TIME' => 1579385789
+]
+2020-01-18 22:16:53 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:16:53 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => 'ffcd0946ab936bc35b8a339a3ca2513f2fd7f7a823c5698d6ef7433fa4bf3a7e'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '57324'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385813.569
+    'REQUEST_TIME' => 1579385813
+]
+2020-01-18 22:18:09 [127.0.0.1][-][-][error][yii\web\HttpException:404] yii\web\NotFoundHttpException: Page not found. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Request.php:287
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(82): yii\web\Request->resolve()
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#3 {main}
+2020-01-18 22:18:09 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => 'ffcd0946ab936bc35b8a339a3ca2513f2fd7f7a823c5698d6ef7433fa4bf3a7e'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCESS_CONTROL_REQUEST_METHOD' => 'GET'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'HTTP_ACCESS_CONTROL_REQUEST_HEADERS' => 'content-type'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '57926'
+    'REDIRECT_URL' => '/v1/event/12/post'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'OPTIONS'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/event/12/post'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579385889.298
+    'REQUEST_TIME' => 1579385889
+]
+2020-01-19 01:34:06 [127.0.0.1][-][-][error][yii\web\HttpException:401] yii\web\UnauthorizedHttpException: Your request was made with invalid credentials. in /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/filters/auth/AuthMethod.php:93
+Stack trace:
+#0 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/filters/auth/AuthMethod.php(76): yii\filters\auth\AuthMethod->handleFailure(Object(yii\web\Response))
+#1 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/ActionFilter.php(77): yii\filters\auth\AuthMethod->beforeAction(Object(yii\base\InlineAction))
+#2 [internal function]: yii\base\ActionFilter->beforeFilter(Object(yii\base\ActionEvent))
+#3 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Component.php(627): call_user_func(Array, Object(yii\base\ActionEvent))
+#4 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Controller.php(276): yii\base\Component->trigger('beforeAction', Object(yii\base\ActionEvent))
+#5 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Controller.php(185): yii\base\Controller->beforeAction(Object(yii\base\InlineAction))
+#6 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#7 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('index', Array)
+#8 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('v1/request/inde...', Array)
+#9 /home/marat/Projects/wetime.ru/api/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#10 /home/marat/Projects/wetime.ru/api/public_html/index.php(7): yii\base\Application->run()
+#11 {main}
+2020-01-19 01:34:06 [127.0.0.1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'REDIRECT_HTTPS' => 'on'
+    'REDIRECT_SSL_TLS_SNI' => 'api.wetime.ru'
+    'REDIRECT_STATUS' => '200'
+    'HTTPS' => 'on'
+    'SSL_TLS_SNI' => 'api.wetime.ru'
+    'SSL_SERVER_S_DN_OU' => 'Domain Control Validated'
+    'SSL_SERVER_S_DN_CN' => '*.wetime.ru'
+    'SSL_SERVER_I_DN_C' => 'BE'
+    'SSL_SERVER_I_DN_O' => 'GlobalSign nv-sa'
+    'SSL_SERVER_I_DN_CN' => 'AlphaSSL CA - SHA256 - G2'
+    'SSL_SERVER_SAN_DNS_0' => '*.wetime.ru'
+    'SSL_SERVER_SAN_DNS_1' => 'wetime.ru'
+    'SSL_VERSION_INTERFACE' => 'mod_ssl/2.4.29'
+    'SSL_VERSION_LIBRARY' => 'OpenSSL/1.1.1'
+    'SSL_PROTOCOL' => 'TLSv1.2'
+    'SSL_SECURE_RENEG' => 'true'
+    'SSL_COMPRESS_METHOD' => 'NULL'
+    'SSL_CIPHER' => 'ECDHE-RSA-AES128-GCM-SHA256'
+    'SSL_CIPHER_EXPORT' => 'false'
+    'SSL_CIPHER_USEKEYSIZE' => '128'
+    'SSL_CIPHER_ALGKEYSIZE' => '128'
+    'SSL_CLIENT_VERIFY' => 'NONE'
+    'SSL_SERVER_M_VERSION' => '3'
+    'SSL_SERVER_M_SERIAL' => '7F77BA062A84015D80F458E5'
+    'SSL_SERVER_V_START' => 'Dec 16 11:27:47 2019 GMT'
+    'SSL_SERVER_V_END' => 'Dec 16 11:27:47 2020 GMT'
+    'SSL_SERVER_S_DN' => 'CN=*.wetime.ru,OU=Domain Control Validated'
+    'SSL_SERVER_I_DN' => 'CN=AlphaSSL CA - SHA256 - G2,O=GlobalSign nv-sa,C=BE'
+    'SSL_SERVER_A_KEY' => 'rsaEncryption'
+    'SSL_SERVER_A_SIG' => 'sha256WithRSAEncryption'
+    'SSL_SESSION_ID' => '16d5243c7bd979ce3a2cadce8886c7755df43b9208930f755f4c22d94c71d39e'
+    'SSL_SESSION_RESUMED' => 'Resumed'
+    'HTTP_HOST' => 'api.wetime.ru'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_ACCEPT' => '*/*'
+    'HTTP_ORIGIN' => 'null'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.117 Safari/537.36'
+    'CONTENT_TYPE' => ''
+    'HTTP_SEC_FETCH_SITE' => 'cross-site'
+    'HTTP_SEC_FETCH_MODE' => 'cors'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br'
+    'HTTP_ACCEPT_LANGUAGE' => 'ru-RU,ru;q=0.9,en-US;q=0.8,en;q=0.7'
+    'PATH' => '/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.29 (Ubuntu) Server at api.wetime.ru Port 443</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.29 (Ubuntu)'
+    'SERVER_NAME' => 'api.wetime.ru'
+    'SERVER_ADDR' => '127.0.0.1'
+    'SERVER_PORT' => '443'
+    'REMOTE_ADDR' => '127.0.0.1'
+    'DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'REQUEST_SCHEME' => 'https'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => '/home/marat/Projects/wetime.ru/api/public_html'
+    'SERVER_ADMIN' => 'webmaster@localhost'
+    'SCRIPT_FILENAME' => '/home/marat/Projects/wetime.ru/api/public_html/index.php'
+    'REMOTE_PORT' => '35608'
+    'REDIRECT_URL' => '/v1/request'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/v1/request'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1579397646.022
+    'REQUEST_TIME' => 1579397646
+]

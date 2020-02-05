@@ -85,7 +85,20 @@ class Subscription extends ActiveRecord
         $subscriptions = Subscription::find()->where(array('user_id' => $user_id))->with(['event'])->asArray()->all();
         foreach ($subscriptions as $subscription) {
             unset($subscription['event']['user_id']);
-            $events[] = $subscription['event'];
+            $event = $subscription['event'];
+            $event['form'] = json_decode($event['form']);
+            $events[] = $event;
+        }
+        return $events;
+    }
+
+    public static function getEventIdsByUserId($user_id){
+        $events = array();
+        $subscriptions = Subscription::find()->where(array('user_id' => $user_id))->with(['event'])->asArray()->all();
+        foreach ($subscriptions as $subscription) {
+            unset($subscription['event']['user_id']);
+            $event = $subscription['event'];
+            $events[] = $event['id'];
         }
         return $events;
     }

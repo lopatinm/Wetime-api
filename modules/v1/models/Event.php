@@ -15,6 +15,7 @@ use yii\helpers\Json;
  * @property int $locality_id
  * @property int $category_id
  * @property string $title
+ * @property string $longtitle
  * @property string|null $alias
  * @property string|null $introtext
  * @property string|null $description
@@ -34,7 +35,10 @@ use yii\helpers\Json;
  * @property int $views
  * @property string|null $latitude
  * @property string|null $longitude
+ * @property int $formtype
  * @property json|null $form
+ * @property string|null $privacy
+ * @property string|null $privacy_url
  *
  * @property Calendar[] $calendars
  * @property User $user
@@ -61,10 +65,10 @@ class Event extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'organization_id', 'locality_id', 'category_id', 'title'], 'required'],
-            [['user_id', 'organization_id', 'locality_id', 'category_id', 'createdon', 'published', 'date', 'rating', 'views'], 'integer'],
-            [['introtext', 'description', 'gallery', 'tags'], 'string'],
-            [['title', 'alias', 'image', 'video', 'address', 'phone', 'email', 'contact', 'time'], 'string', 'max' => 255],
+            [['user_id', 'organization_id', 'locality_id', 'category_id', 'title', 'longtitle'], 'required'],
+            [['user_id', 'organization_id', 'locality_id', 'category_id', 'createdon', 'published', 'date', 'rating', 'views', 'formtype'], 'integer'],
+            [['introtext', 'description', 'gallery', 'tags', 'privacy'], 'string'],
+            [['title', 'longtitle', 'alias', 'image', 'video', 'address', 'phone', 'email', 'contact', 'time', 'privacy_url'], 'string', 'max' => 255],
             [['latitude', 'longitude'], 'string', 'max' => 20],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
             [['organization_id'], 'exist', 'skipOnError' => true, 'targetClass' => Organization::className(), 'targetAttribute' => ['organization_id' => 'id']],
@@ -85,6 +89,7 @@ class Event extends ActiveRecord
             'locality_id' => 'Locality ID',
             'category_id' => 'Category ID',
             'title' => 'Title',
+            'longtitle' => 'Long Title',
             'alias' => 'Alias',
             'introtext' => 'Introtext',
             'description' => 'Description',
@@ -104,7 +109,10 @@ class Event extends ActiveRecord
             'views' => 'Views',
             'latitude' => 'Latitude',
             'longitude' => 'Longitude',
+            'formtype' => 'Form Type',
             'form' => 'Form',
+            'privacy' => 'Privacy',
+            'privacy_url' => 'Privacy URL',
         ];
     }
 
@@ -119,6 +127,7 @@ class Event extends ActiveRecord
             'locality_id',
             'category_id',
             'title',
+            'longtitle',
             'alias',
             'introtext',
             'description',
@@ -138,7 +147,10 @@ class Event extends ActiveRecord
             'views',
             'latitude',
             'longitude',
-            'form'
+            'formtype',
+            'form',
+            'privacy',
+            'privacy_url'
         ];
     }
 

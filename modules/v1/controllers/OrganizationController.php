@@ -256,4 +256,27 @@ class OrganizationController extends ActiveController {
             throw new NotFoundHttpException(sprintf('Organization for ID '.$id.' not found'));
         }
     }
+
+    /**
+     * @api {get} /v1/organization/{id}/event Список мероприятий организации
+     * @apiDescription {id} - ID организации в URL
+     * @apiName Event
+     * @apiGroup Organization
+     * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     */
+    /**
+     * @param $id
+     * @return ActiveDataProvider
+     */
+    public function actionEvent($id)
+    {
+        $model = new Event;
+        $activeData = new ActiveDataProvider([
+            'query' => $model::find()->where(array('organization_id' => $id))->orderBy("id DESC"),
+        ]);
+        return $activeData;
+    }
 }

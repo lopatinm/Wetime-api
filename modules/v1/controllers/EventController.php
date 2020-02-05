@@ -4,6 +4,7 @@ namespace app\modules\v1\controllers;
 use app\modules\v1\models\Calendar;
 use app\modules\v1\models\Event;
 use app\modules\v1\models\Organization;
+use app\modules\v1\models\Post;
 use app\modules\v1\models\Request;
 use app\modules\v1\models\Subscription;
 use app\modules\v1\models\UserAttributes;
@@ -76,7 +77,8 @@ class EventController extends ActiveController {
      * @apiParam {Integer} organization_id ID организации
      * @apiParam {Integer} locality_id ID населенного пункта
      * @apiParam {Integer} category_id ID категории
-     * @apiParam {String} title Название мероприятия
+     * @apiParam {String} title Краткое название мероприятия
+     * @apiParam {String} longtitle Название мероприятия
      * @apiParam {String} [introtext] Краткое описание мероприятия
      * @apiParam {String} [description] Подробное описание мероприятия
      * @apiParam {String} [image] URL картинки мероприятия
@@ -92,6 +94,7 @@ class EventController extends ActiveController {
      * @apiParam {String} [tags] Теги мероприятия
      * @apiParam {String} [latitude] Широта на карте места проведения мероприятия
      * @apiParam {String} [longitude] Долгота на карте места проведения мероприятия
+     * @apiParam {Integer} [formtype] Тип формы заявки. Значения: 1 - Обычная форма заявки; 2 - Кнопка "Я иду"; 3 - Без формы заявки;
      * @apiParam {json} [form] Форма заявки мероприятия
      */
     /**
@@ -109,6 +112,7 @@ class EventController extends ActiveController {
         $event = new Event;
         $event->user_id =     $params['user_id'];
         $event->title =       $params['title'];
+        $event->longtitle =   $params['longtitle'];
         $event->alias =       Event::translit($params['title']);
         $event->organization_id = $params['organization_id'];
         $event->category_id = $params['category_id'];
@@ -162,6 +166,9 @@ class EventController extends ActiveController {
         if(isset($params['longitude'])) {
             $event->longitude = $params['longitude'];
         }
+        if(isset($params['formtype'])) {
+            $event->formtype = $params['formtype'];
+        }
         if(isset($params['form'])) {
             $event->form = $params['form'];
         }
@@ -191,7 +198,8 @@ class EventController extends ActiveController {
      * @apiParam {Integer} organization_id ID организации
      * @apiParam {Integer} locality_id ID населенного пункта
      * @apiParam {Integer} category_id ID категории
-     * @apiParam {String} title Название мероприятия
+     * @apiParam {String} title Краткое название мероприятия
+     * @apiParam {String} longtitle Название мероприятия
      * @apiParam {String} [introtext] Краткое описание мероприятия
      * @apiParam {String} [description] Подробное описание мероприятия
      * @apiParam {String} [image] URL картинки мероприятия
@@ -207,6 +215,7 @@ class EventController extends ActiveController {
      * @apiParam {String} [tags] Теги мероприятия
      * @apiParam {String} [latitude] Широта на карте места проведения мероприятия
      * @apiParam {String} [longitude] Долгота на карте места проведения мероприятия
+     * @apiParam {Integer} [formtype] Тип формы заявки. Значения: 1 - Обычная форма заявки; 2 - Кнопка "Я иду"; 3 - Без формы заявки;
      * @apiParam {json} [form] Форма заявки мероприятия
      */
     /**
@@ -228,6 +237,7 @@ class EventController extends ActiveController {
 
             $params = Yii::$app->getRequest()->getBodyParams();
             $event->title =       $params['title'];
+            $event->longtitle =       $params['longtitle'];
             $event->alias =       Event::translit($params['title']);
             $event->organization_id = $params['organization_id'];
             $event->category_id = $params['category_id'];
@@ -278,6 +288,9 @@ class EventController extends ActiveController {
             if(isset($params['longitude'])) {
                 $event->longitude = $params['longitude'];
             }
+            if(isset($params['formtype'])) {
+                $event->formtype = $params['formtype'];
+            }
             if(isset($params['form'])) {
                 $event->form = $params['form'];
             }
@@ -290,7 +303,7 @@ class EventController extends ActiveController {
 
     /**
      * @api {delete} /v1/event/{id} Удаление мероприятия
-     * @apiDescription Для удаления мероприятия нажно передать {id} - ID мероприятия в URL
+     * @apiDescription {id} - ID мероприятия в URL
      * @apiName Delete
      * @apiGroup Event
      * @apiVersion 1.0.0
@@ -439,6 +452,29 @@ class EventController extends ActiveController {
         $model = new Event;
         $activeData = new ActiveDataProvider([
             'query' => $model::find()->where(array($field.'_id' => $id))->orderBy("id DESC"),
+        ]);
+        return $activeData;
+    }
+
+    /**
+     * @api {get} /v1/event/{id}/post Список публикаций мероприятия
+     * @apiDescription {id} - ID мероприятия в URL
+     * @apiName Post
+     * @apiGroup Event
+     * @apiVersion 1.0.0
+     * @apiHeader {String = application/json, application/xml} Content-type MIME тип ресурса.
+     * @apiHeaderExample {String} Пример заголовка:
+     *     "Content-type": "application/json"
+     */
+     /**
+     * @param $id
+     * @return ActiveDataProvider
+     */
+    public function actionPost($id)
+    {
+        $model = new Post;
+        $activeData = new ActiveDataProvider([
+            'query' => $model::find()->where(array('event_id' => $id))->orderBy("id DESC"),
         ]);
         return $activeData;
     }

@@ -116,6 +116,13 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "title",
+            "description": "<p>Краткое название мероприятия</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longtitle",
             "description": "<p>Название мероприятия</p>"
           },
           {
@@ -225,6 +232,13 @@ define({ "api": [
           },
           {
             "group": "Parameter",
+            "type": "Integer",
+            "optional": true,
+            "field": "formtype",
+            "description": "<p>Тип формы заявки. Значения: 1 - Обычная форма заявки; 2 - Кнопка &quot;Я иду&quot;; 3 - Без формы заявки;</p>"
+          },
+          {
+            "group": "Parameter",
             "type": "json",
             "optional": true,
             "field": "form",
@@ -245,7 +259,7 @@ define({ "api": [
     "type": "delete",
     "url": "/v1/event/{id}",
     "title": "Удаление мероприятия",
-    "description": "<p>Для удаления мероприятия нажно передать {id} - ID мероприятия в URL</p>",
+    "description": "<p>{id} - ID мероприятия в URL</p>",
     "name": "Delete",
     "group": "Event",
     "version": "1.0.0",
@@ -374,6 +388,46 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "https://api.wetime.ru/v1/event/filter/{field}/{id}"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1/event/{id}/post",
+    "title": "Список публикаций мероприятия",
+    "description": "<p>{id} - ID мероприятия в URL</p>",
+    "name": "Post",
+    "group": "Event",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/EventController.php",
+    "groupTitle": "Event",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/event/{id}/post"
       }
     ]
   },
@@ -599,6 +653,13 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "title",
+            "description": "<p>Краткое название мероприятия</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "longtitle",
             "description": "<p>Название мероприятия</p>"
           },
           {
@@ -705,6 +766,13 @@ define({ "api": [
             "optional": true,
             "field": "longitude",
             "description": "<p>Долгота на карте места проведения мероприятия</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": true,
+            "field": "formtype",
+            "description": "<p>Тип формы заявки. Значения: 1 - Обычная форма заявки; 2 - Кнопка &quot;Я иду&quot;; 3 - Без формы заявки;</p>"
           },
           {
             "group": "Parameter",
@@ -934,6 +1002,46 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/v1/organization/{id}/event",
+    "title": "Список мероприятий организации",
+    "description": "<p>{id} - ID организации в URL</p>",
+    "name": "Event",
+    "group": "Organization",
+    "version": "1.0.0",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/OrganizationController.php",
+    "groupTitle": "Organization",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/organization/{id}/event"
+      }
+    ]
+  },
+  {
+    "type": "get",
     "url": "/v1/organization",
     "title": "Получение списка организация",
     "name": "Organization",
@@ -1110,6 +1218,293 @@ define({ "api": [
     "sampleRequest": [
       {
         "url": "https://api.wetime.ru/v1/organization/{id}"
+      }
+    ]
+  },
+  {
+    "type": "post",
+    "url": "/v1/post",
+    "title": "Создание публикации",
+    "name": "Create",
+    "group": "Post",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>ID мероприятия</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Название публикации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>Текст публикации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "images",
+            "description": "<p>URL картинки публикации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "video",
+            "description": "<p>URL видео публикации</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./modules/v1/controllers/PostController.php",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/post"
+      }
+    ]
+  },
+  {
+    "type": "delete",
+    "url": "/v1/post/{id}",
+    "title": "Удаление публикации",
+    "description": "<p>{id} - ID публикации в URL</p>",
+    "name": "Delete",
+    "group": "Post",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/PostController.php",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/post/{id}"
+      }
+    ]
+  },
+  {
+    "type": "get",
+    "url": "/v1/post",
+    "title": "Список публикаций по подпискам",
+    "name": "Post",
+    "group": "Post",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager, user"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "filename": "./modules/v1/controllers/PostController.php",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/post"
+      }
+    ]
+  },
+  {
+    "type": "put",
+    "url": "/v1/post",
+    "title": "Обновление публикации",
+    "name": "Update",
+    "group": "Post",
+    "version": "1.0.0",
+    "permission": [
+      {
+        "name": "administrator, manager"
+      }
+    ],
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "String",
+            "allowedValues": [
+              "application/json",
+              "application/xml"
+            ],
+            "optional": false,
+            "field": "Content-type",
+            "description": "<p>MIME тип ресурса.</p>"
+          },
+          {
+            "group": "Header",
+            "type": "String",
+            "optional": false,
+            "field": "Authorization",
+            "description": "<p>token авторизации.</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Пример заголовка:",
+          "content": "\"Content-type\": \"application/json\"\n\"Authorization\": \"Bearer BJHTN8rL9PfemW3Ws5shZK90jYh-RZ3QOXXDD9M3lXPe-GDE1pOPaHfN_JTxQprV\"",
+          "type": "String"
+        }
+      ]
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "event_id",
+            "description": "<p>ID мероприятия</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "title",
+            "description": "<p>Название публикации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "content",
+            "description": "<p>Текст публикации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "images",
+            "description": "<p>URL картинки публикации</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": true,
+            "field": "video",
+            "description": "<p>URL видео публикации</p>"
+          }
+        ]
+      }
+    },
+    "filename": "./modules/v1/controllers/PostController.php",
+    "groupTitle": "Post",
+    "sampleRequest": [
+      {
+        "url": "https://api.wetime.ru/v1/post"
       }
     ]
   },

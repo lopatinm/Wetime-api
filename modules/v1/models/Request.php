@@ -103,7 +103,9 @@ class Request extends ActiveRecord
         $requests = Request::find()->where(array('user_id' => $user_id))->with(['event'])->asArray()->all();
         foreach ($requests as $request) {
             unset($request['event']['user_id']);
-            $events[] = $request['event'];
+            $event = $request['event'];
+            $event['form'] = json_decode($event['form']);
+            $events[] = $event;
         }
         return $events;
     }
